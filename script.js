@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const phoneNumber = "905523090037"; 
             
             // 4. تنسيق الرسالة
-            const textMessage = `مرحباً، لدي رسالة من موقعك الشخصي (Portfolio):%0A%0A*الاسم:* ${name}%0A*الرسالة:* ${message}`;
+            const textMessage = `مرحباً، لدي رسالة من موقعك الشخصي:%0A%0A*الاسم:* ${name}%0A*الرسالة:* ${message}`;
             
             // 5. دمج الرقم مع الرسالة
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${textMessage}`;
