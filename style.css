@@ -254,3 +254,40 @@ section p.desc {
     background-color: #357ABD; /* أزرق أغمق عند التأشير */
     transform: translateY(-2px);
 }
+
+
+/* =========================================
+   7. أزرار عرض المزيد
+   ========================================= */
+.btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.view-all-btn {
+    display: inline-block;
+    background-color: var(--text-color);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.view-all-btn:hover {
+    background-color: var(--web-color); /* سيتغير للون القسم */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* لجعل البطاقات قابلة للنقر */
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block; /* لجعل الرابط يغطي البطاقة بالكامل */
+}
