@@ -54,37 +54,4 @@ document.addEventListener("DOMContentLoaded", function() {
             window.open(whatsappUrl, '_blank');
         });
     }
-});// =========================================
-// إرسال نموذج التواصل إلى الواتساب (طريقة آمنة)
-// =========================================
-
-// نطلب من المتصفح الانتظار حتى يتم تحميل ملف HTML بالكامل
-document.addEventListener("DOMContentLoaded", function() {
-    
-    // نبحث عن النموذج
-    const whatsappForm = document.getElementById('whatsapp-form');
-    
-    // إذا وجدنا النموذج في الصفحة، نطبق عليه الأوامر
-    if (whatsappForm) {
-        whatsappForm.addEventListener('submit', function(e) {
-            // 1. منع الصفحة من إعادة التحميل (الخطوة الأهم)
-            e.preventDefault();
-            
-            // 2. قراءة البيانات
-            const name = document.getElementById('sender-name').value;
-            const message = document.getElementById('sender-message').value;
-            
-            // 3. رقم الواتساب الخاص بك
-            const phoneNumber = "905523090037"; 
-            
-            // 4. تنسيق الرسالة
-            const textMessage = `مرحباً، لدي رسالة من موقعك الشخصي (Portfolio):%0A%0A*الاسم:* ${name}%0A*الرسالة:* ${message}`;
-            
-            // 5. دمج الرقم مع الرسالة
-            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${textMessage}`;
-            
-            // 6. فتح الرابط في نافذة جديدة
-            window.open(whatsappUrl, '_blank');
-        });
-    }
 });
