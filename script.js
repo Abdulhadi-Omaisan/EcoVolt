@@ -1,4 +1,6 @@
-// اختيار جميع أشرطة التمرير (الطبقات الثلاث)
+// =========================================
+// 1. تحريك أشرطة التمرير للمشاريع (الأسهم)
+// =========================================
 const carousels = document.querySelectorAll('.carousel-wrapper');
 
 carousels.forEach(carousel => {
@@ -19,32 +21,28 @@ carousels.forEach(carousel => {
     });
 });
 
+// =========================================
+// 2. إرسال نموذج التواصل إلى الواتساب
+// =========================================
 
-/* =========================================
-   إرسال نموذج التواصل إلى الواتساب
-   ========================================= */
-   const whatsappForm = document.getElementById('whatsapp-form');
+// دالة إرسال الواتساب المباشرة
+function sendWhatsapp(event) {
+    // 1. منع الصفحة من إعادة التحميل
+    event.preventDefault();
 
-   if (whatsappForm) {
-       whatsappForm.addEventListener('submit', function(e) {
-           // منع الصفحة من إعادة التحميل عند الضغط على زر الإرسال
-           e.preventDefault();
-   
-           // 1. قراءة البيانات التي أدخلها الزائر
-           const name = document.getElementById('sender-name').value;
-           const message = document.getElementById('sender-message').value;
-   
-           // 2. رقم الواتساب الخاص بك (بدون علامة + أو أصفار في البداية)
-           const phoneNumber = "905523090037"; 
-   
-           // 3. تنسيق الرسالة لتكون مرتبة عند وصولها لك
-           // الرمز %0A يعني سطر جديد (Enter) في الروابط
-           const textMessage = `مرحباً، لدي رسالة من موقعك الشخصي (Portfolio):%0A%0A*الاسم:* ${name}%0A*البريد الإلكتروني:* ${message}`;
-   
-           // 4. دمج الرقم مع الرسالة في رابط واتساب الرسمي
-           const whatsappUrl = `https://wa.me/${phoneNumber}?text=${textMessage}`;
-   
-           // 5. فتح الرابط في نافذة جديدة
-           window.open(whatsappUrl, '_blank');
-       });
-   }
+    // 2. قراءة البيانات (الاسم والرسالة)
+    const name = document.getElementById('sender-name').value;
+    const message = document.getElementById('sender-message').value;
+
+    // 3. رقم الواتساب الخاص بك
+    const phoneNumber = "905523090037"; 
+
+    // 4. تنسيق الرسالة
+    const textMessage = `مرحباً، لدي رسالة من موقعك الشخصي (Portfolio):%0A%0A*الاسم:* ${name}%0A*الرسالة:* ${message}`;
+
+    // 5. دمج الرقم مع الرسالة في رابط واتساب الرسمي
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${textMessage}`;
+
+    // 6. فتح الرابط في نافذة جديدة
+    window.open(whatsappUrl, '_blank');
+}
