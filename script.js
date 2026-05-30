@@ -39,7 +39,7 @@ carousels.forEach(carousel => {
    
            // 3. تنسيق الرسالة لتكون مرتبة عند وصولها لك
            // الرمز %0A يعني سطر جديد (Enter) في الروابط
-           const textMessage = `مرحباً، لدي رسالة من موقعك الشخصي (Portfolio):%0A%0A*الاسم:* ${name}%0A*البريد الإلكتروني:* ${email}%0A*الرسالة:* ${message}`;
+           const textMessage = `مرحباً، لدي رسالة من موقعك الشخصي (Portfolio):%0A%0A*الاسم:* ${name}%0A*البريد الإلكتروني:* ${message}`;
    
            // 4. دمج الرقم مع الرسالة في رابط واتساب الرسمي
            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${textMessage}`;
